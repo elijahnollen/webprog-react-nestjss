@@ -1,0 +1,150 @@
+:root {
+  --bg-color: #ffffff;
+  --ink-color: #000000;
+  --gray-ink: #555555;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--ink-color);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.doodle-app-container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px 20px;
+}
+
+.doodle-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.guestbook-main-flex {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch; 
+  margin-bottom: 60px;
+}
+
+.doodle-card {
+  background: white;
+  border: 2.5px solid var(--ink-color);
+  padding: 20px;
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.05);
+  border-radius: 20px 5px 15px 8px / 8px 15px 5px 20px;
+}
+
+.form-box { flex: 2; max-width: 480px; }
+.sticker-box { flex: 1; max-width: 260px; display: flex; flex-direction: column; }
+
+.doodle-label {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.doodle-input-field, .doodle-textarea-field {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid var(--ink-color);
+  background: #fdfdfd; 
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 10px 20px 10px 20px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #000000 !important; 
+  outline: none;
+}
+
+.doodle-textarea-wrapper { position: relative; }
+.doodle-textarea-field { height: 120px; resize: none; }
+
+.sticker-drop-preview {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 55px;
+  height: 55px;
+  border: 1.5px dashed var(--gray-ink);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.sticker-drop-preview img { width: 45px; height: 45px; object-fit: contain; }
+.drop-text { font-size: 0.6rem; color: var(--gray-ink); text-align: center; }
+
+.doodle-submit-btn {
+  width: 100%;
+  background: var(--ink-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* STICKER GRID - Shrunk to fit inside border */
+.sticker-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  flex-grow: 1;
+  align-content: center;
+}
+
+.sticker-item-doodle {
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.sticker-item-doodle img { 
+  width: 65px; 
+  height: 65px; 
+  object-fit: contain; 
+}
+
+.sticker-item-doodle.active {
+  background: #f5f5f5;
+  border: 1.5px solid var(--ink-color);
+  border-radius: 10px;
+}
+
+
+.entry-doodle-bubble {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: white;
+  border: 2px solid var(--ink-color);
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px 50px 15px 50px / 50px 15px 50px 15px;
+  margin: 0 auto 15px auto;
+}
+
+.entry-user-identity { font-weight: bold; font-size: 1rem; }
+.entry-user-message { margin: 5px 0 0 0; font-size: 0.95rem; color: #444; }
+.entry-sticker-right img { width: 50px; height: 50px; object-fit: contain; }
+
+@media (max-width: 768px) {
+  .guestbook-main-flex { flex-direction: column; align-items: center; }
+  .sticker-box { max-width: 100%; width: 100%; }
+}
